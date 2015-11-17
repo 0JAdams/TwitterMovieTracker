@@ -41,28 +41,19 @@
         <h3>
 <a id="intro" class="anchor" href="#intro" aria-hidden="true"><span class="octicon octicon-link"></span></a>Intro</h3>
 
-<p>TwitterMovieWatcher is a set of Python scripts for monitoring a stream of tweets in relation to chosen movies.  Those tweets are then classified by their overall sentiment.  Release date and box office data are pulled from boxofficemojo.com (thanks goes to them for that). The data is compared to find correlations.</p>
+<p>This Twitter Movie Sentiment Watcher is a set of Python scripts for monitoring a stream of tweets in relation to chosen movies.  Those tweets are then classified by their overall sentiment.  Release date and box office data are pulled from boxofficemojo.com (thanks goes to them for that). The data is then graphed and compared to find correlations.</p>
 
 <h3>
-<a id="how-it-works" class="anchor" href="#how-it-works" aria-hidden="true"><span class="octicon octicon-link"></span></a>How It Works</h3>
+<a id="what-it-does" class="anchor" href="#what-it-does" aria-hidden="true"><span class="octicon octicon-link"></span></a>What it Does</h3>
 
-<p>After everything has been initialized and trained, using the tweepy library for Python a twitter stream is initialized. Based on a list of movie keywords, all relevant tweets are pulled live from twitter.  Because a Twitter stream returns all tweets related to all of your keywords, those tweets are then checked against a dictionary of keywords to match the keyword in the tweet back to the correct movie.</p>
+<p>Based on a list of movie keywords, relevant tweets are streamed from twitter.  Those tweets are preprocessed, and then analyzed. A group of classification algorithms rate the sentiment of the tweet and vote whether it has a positive sentiment or a negative sentiment.</p>
 
-<p>As each tweet comes in it is pre-processed. First, each word is stemmed using the Natural Language Tool-Kit (NLTK) for python. This makes the words match our training set (which was also stemmed).  The stemming helps us have a more concise feature set for comparing against and results in more accurate sentiment analysis. Using the NLTK library and the scikit-learn library, the tweet is then passed to a series of classification algorithms, which each produce an analysis of the sentiment and vote on whether the sentiment was positive or negative. The tweet ID, time stamp, related movie, and sentiment classification are stored in an SQL database for later reference.</p>
-
-<p>A simple web scraper that uses the urllib3 and BeautifulSoup4 libraries pulls the release date and daily box office numbers from boxofficemojo.com and stores them in an SQL table.</p>
-
-<p>All of the sentiment and box office data is then graphed over time using the matplotlib library to view correlations.</p>
+<p>Each movie's box office data is pulled from the web as daily earnings.  The data are then graphed and compared to determine correlation between the two data sets.</p>
 
 <h3>
-<a id="current-state" class="anchor" href="#current-state" aria-hidden="true"><span class="octicon octicon-link"></span></a>Current State</h3>
+<a id="why-it-does-it" class="anchor" href="#why-it-does-it" aria-hidden="true"><span class="octicon octicon-link"></span></a>Why it Does it</h3>
 
-<p>Currently the project is a collection of Python scripts that are mostly separate with each performing one function of process.  The code is in place to train the classification algorithms, stream and analyze relevant tweets, store them in an SQL database, and scrape each movie's box office data.</p>
-
-<h3>
-<a id="what-it-still-needs" class="anchor" href="#what-it-still-needs" aria-hidden="true"><span class="octicon octicon-link"></span></a>What It Still Needs</h3>
-
-<p>S</p>
+<p>The data is gathered to try and understand how social media sentiment correlates to the reception and performance of a movie.  If a strong or weak correlation can be found it could prove to be valuable knowledge for marketing companies that already work to sway social media sentiment.</p>
       </section>
 
     </div>
