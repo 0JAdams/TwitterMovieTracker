@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Twitter Movie Sentiment Watcher by 0JAdams</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-dark.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="stylesheets/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  </head>
+  <body>
+      <div id="header">
+        <nav>
+          <li class="fork"><a href="https://github.com/0JAdams/TwitterMovieWatcher">View On GitHub</a></li>
+          <li class="downloads"><a href="https://github.com/0JAdams/TwitterMovieWatcher/zipball/master">ZIP</a></li>
+          <li class="downloads"><a href="https://github.com/0JAdams/TwitterMovieWatcher/tarball/master">TAR</a></li>
+          <li class="title">DOWNLOADS</li>
+        </nav>
+      </div><!-- end header -->
+
+    <div class="wrapper">
+
+      <section>
+        <div id="title">
+          <h1>Twitter Movie Sentiment Watcher</h1>
+          <p>Track Twitter Sentiment For Upcoming Movies</p>
+          <hr>
+          <span class="credits left">Project maintained by <a href="https://github.com/0JAdams">0JAdams</a></span>
+          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></span>
+        </div>
+
+        <h3>
+<a id="intro" class="anchor" href="#intro" aria-hidden="true"><span class="octicon octicon-link"></span></a>Intro</h3>
+
+<p>TwitterMovieWatcher is a set of Python scripts for monitoring a stream of tweets in relation to chosen movies.  Those tweets are then classified by their overall sentiment.  Release date and box office data are pulled from boxofficemojo.com (thanks goes to them for that). </p>
+
+<h3>
+<a id="current-state" class="anchor" href="#current-state" aria-hidden="true"><span class="octicon octicon-link"></span></a>Current State</h3>
+
+<p>We’ve done something</p>
+
+<h3>
+<a id="how-it-works" class="anchor" href="#how-it-works" aria-hidden="true"><span class="octicon octicon-link"></span></a>How It Works</h3>
+
+<p>After everything has been initialized and trained, using the tweepy library for Python a twitter stream is initialized. Based on a list of movie keywords, all relevant tweets are pulled live from twitter.  Because a Twitter stream returns all tweets related to all of your keywords, those tweets are then checked against a dictionary of keywords to match the keyword in the tweet back to the correct movie.</p>
+
+<p>As each tweet comes in it is pre-processed. First, each word is stemmed using the Natural Language Tool-Kit (NLTK) for python. This makes the words match our training set (which was also stemmed).  The stemming helps us have a more concise feature set for comparing against and results in more accurate sentiment analysis. Using the NLTK library and the scikit-learn library, the tweet is then passed to a series of classification algorithms, which each produce an analysis of the sentiment and vote on whether the sentiment was positive or negative. The tweet ID, time stamp, related movie, and sentiment classification are stored in an SQL database for later reference.</p>
+
+<p>A simple web scraper that uses the urllib3 and BeautifulSoup4 libraries pulls the release date and daily box office numbers from boxofficemojo.com and stores them in an SQL table.</p>
+
+<h3>
+<a id="what-it-still-needs" class="anchor" href="#what-it-still-needs" aria-hidden="true"><span class="octicon octicon-link"></span></a>What It Still Needs</h3>
+
+<p>W</p>
+      </section>
+
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
+  </body>
+</html>
