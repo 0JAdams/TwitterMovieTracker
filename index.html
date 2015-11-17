@@ -41,12 +41,7 @@
         <h3>
 <a id="intro" class="anchor" href="#intro" aria-hidden="true"><span class="octicon octicon-link"></span></a>Intro</h3>
 
-<p>TwitterMovieWatcher is a set of Python scripts for monitoring a stream of tweets in relation to chosen movies.  Those tweets are then classified by their overall sentiment.  Release date and box office data are pulled from boxofficemojo.com (thanks goes to them for that). </p>
-
-<h3>
-<a id="current-state" class="anchor" href="#current-state" aria-hidden="true"><span class="octicon octicon-link"></span></a>Current State</h3>
-
-<p>We’ve done something</p>
+<p>TwitterMovieWatcher is a set of Python scripts for monitoring a stream of tweets in relation to chosen movies.  Those tweets are then classified by their overall sentiment.  Release date and box office data are pulled from boxofficemojo.com (thanks goes to them for that). The data is compared to find correlations.</p>
 
 <h3>
 <a id="how-it-works" class="anchor" href="#how-it-works" aria-hidden="true"><span class="octicon octicon-link"></span></a>How It Works</h3>
@@ -56,6 +51,13 @@
 <p>As each tweet comes in it is pre-processed. First, each word is stemmed using the Natural Language Tool-Kit (NLTK) for python. This makes the words match our training set (which was also stemmed).  The stemming helps us have a more concise feature set for comparing against and results in more accurate sentiment analysis. Using the NLTK library and the scikit-learn library, the tweet is then passed to a series of classification algorithms, which each produce an analysis of the sentiment and vote on whether the sentiment was positive or negative. The tweet ID, time stamp, related movie, and sentiment classification are stored in an SQL database for later reference.</p>
 
 <p>A simple web scraper that uses the urllib3 and BeautifulSoup4 libraries pulls the release date and daily box office numbers from boxofficemojo.com and stores them in an SQL table.</p>
+
+<p>All of the sentiment and box office data is then graphed over time to view correlations.</p>
+
+<h3>
+<a id="current-state" class="anchor" href="#current-state" aria-hidden="true"><span class="octicon octicon-link"></span></a>Current State</h3>
+
+<p>Currently the project is a collection of Python scripts that are mostly separate with each performing one function of process.  The code is in place to train the classification algorithms, stream and analyze relevant tweets, store them in an SQL database, and scrape each movie's box office data.</p>
 
 <h3>
 <a id="what-it-still-needs" class="anchor" href="#what-it-still-needs" aria-hidden="true"><span class="octicon octicon-link"></span></a>What It Still Needs</h3>
