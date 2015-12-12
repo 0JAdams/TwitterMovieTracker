@@ -79,8 +79,23 @@
 <h2>
 <a id="limitations-and-potential-future-work" class="anchor" href="#limitations-and-potential-future-work" aria-hidden="true"><span class="octicon octicon-link"></span></a>Limitations And Potential Future Work</h2>
 
+<p>The amount of data that was able to be collected before building the decision tree was fairly small.  This is mostly due to the rate at which movies come out and the short time period (~6 weeks) that the data was able to be collected.  Another challenge for this was the limitation Twitter has on how many tweets you can receive on a stream in a given period.  If too many keywords are requested (to allow you to track more movies), too many tweets will match your search terms at a given moment and Twitter will just return a notification that the count was too high.  There may be ways to get around this limitation and to allow us to track a higher number of movies at once.</p>
+
+<p>This low amount of data made for a predictor that is semi-accurate for movies that follow the usual downward trend.  For movies that don't fall very fast, or that actually increase week over week, the predictor won't have ever seen anything like that and will not be able to predict that.</p>
+
+<p>Many movies have titles that are just words used in common speech.  The current system has no effective way of determining if a tweet relates to the movie, or to something else involving that word.  This leaves some movies unable to be followed or predicted with the current system.</p>
+
+<p>Another area that could be improved on is the sentiment analysis.  When dealing with tweets, there is often very little data to work with to make a prediction.  The classifiers used in this project did fairly well and I was able to get them all to ~80% accuracy. If this can be further improved it will greatly help in having more accurate sentiment results.</p>
+
 <h2>
 <a id="libraries-and-resources-used" class="anchor" href="#libraries-and-resources-used" aria-hidden="true"><span class="octicon octicon-link"></span></a>Libraries And Resources Used</h2>
+
+<p>*This project was written in <a href="https://www.python.org/">Python</a>
+*Python <a href="http://www.nltk.org/">Natural Language Toolkit</a>
+*<a href="http://scikit-learn.org/stable/index.html">scikit-learn</a> machine learning toolkit for Python
+*<a href="http://www.tweepy.org/">Tweepy</a> Twitter API library for Python
+*<a href="http://www.crummy.com/software/BeautifulSoup/">Beautiful Soup</a> HTML parser
+*<a href="https://pythonprogramming.net/tokenizing-words-sentences-nltk-tutorial/">Python Programming Tutorials for NLTK</a></p>
 
       <footer class="site-footer">
         <span class="site-footer-owner"><a href="https://github.com/0JAdams/TwitterMovieTracker">Twitter Movie Sentiment Tracker</a> is maintained by <a href="https://github.com/0JAdams">0JAdams</a>.</span>
