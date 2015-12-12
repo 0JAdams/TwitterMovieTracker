@@ -36,7 +36,7 @@
 <h2>
 <a id="exactly-what-kind-of-information-is-tracked" class="anchor" href="#exactly-what-kind-of-information-is-tracked" aria-hidden="true"><span class="octicon octicon-link"></span></a>Exactly What Kind of Information Is Tracked?</h2>
 
-<p>Put most basically, there are just two items tracked, tweets about a given movie, and how well that movie has been doing in the box office.  There is a lot of information that we can gather from that data, though.  First off, we can how many people are talking about movie X in comparison to movie Y.  We can also see how frequently people are talking positively about a movie versus negatively about it and also compare that to other movies.  We refer to this as the sentiment.  The difference between how many tweets are positive and how many are negative tells us the majority sentiment, which we refer to as the net sentiment. One of the most important factors we can gather is how do these things change from week to week.  We can understand if people are still talking a lot about a movie after week 3 or 4, or if people really aren't talking about it as much anymore.</p>
+<p>There are just two items tracked, tweets about a given movie, and how well that movie has been doing in the box office.  There is, however, a lot of meaningful information that we can gather from just that data.  First off, we can see how many people are talking about movie X in comparison to movie Y.  We can also see how frequently people are talking positively about a movie versus negatively about it and also compare that to other movies.  We refer to this as the sentiment.  The difference between how many tweets are positive and how many are negative tells us the majority sentiment, which we refer to as the net sentiment. One of the most important factors we can gather is how do these things change from week to week.  We can understand if people are still talking a lot about a movie after week 3 or 4, or if people really aren't talking about it as much anymore.</p>
 
 <p>Here are some visualizations of that twitter and box office data being tracked for some recent movies:</p>
 
@@ -53,17 +53,24 @@
 <h2>
 <a id="how-is-the-data-gathered-and-analyzed" class="anchor" href="#how-is-the-data-gathered-and-analyzed" aria-hidden="true"><span class="octicon octicon-link"></span></a>How Is The Data Gathered And Analyzed?</h2>
 
-<p>The data is gathered to try and understand how social media sentiment correlates to the reception and performance of a movie.  If a strong or weak correlation can be found it could prove to be valuable knowledge for marketing companies that already work to sway social media sentiment.</p>
+<p>The first step is to gather the data from Twitter.  By giving Twitter a list of keywords we can receive a live stream of all tweets that match those keywords.  Before our system can analyze the tweet, it needs to be modified so that we can focus in on the most important features of the tweet.  The words are stemmed, punctuation is removed, and we only keep adverbs, adjectives, and verbs because they have been most valuable in determining sentiment.</p>
 
-<h3>
-<a id="sentiment-analysis" class="anchor" href="#sentiment-analysis" aria-hidden="true"><span class="octicon octicon-link"></span></a>Sentiment Analysis</h3>
+<p>This is demonstrated here:
+<img src="https://raw.githubusercontent.com/0JAdams/TwitterMovieTracker/gh-pages/images/preprocessanim7.gif" alt="Preprocess Tweet"></p>
 
-<p><img src="https://raw.githubusercontent.com/0JAdams/TwitterMovieTracker/gh-pages/images/sentiment-analysis-flow-chart.png" alt="Sentiment Analysis Flow Chart"></p>
+<p>Now that the tweet is ready, it is passed on to a series of machine learning classification algorithms that will each analyze and tell us whether it believes that tweet is speaking positively or negatively.  Due to the complexity of language, especially with words having multiple meanings, these classifiers are not perfectly accurate.  In order to improve our results, we use several of them, and each one votes on what it thinks the correct answer is.  We then take whichever answer is most popular as the correct answer. That result is then stored for later use.</p>
 
-<h3>
-<a id="preprocess-step" class="anchor" href="#preprocess-step" aria-hidden="true"><span class="octicon octicon-link"></span></a>Preprocess Step:</h3>
+<p>A flow chart of this process can be seen here:
+<img src="https://raw.githubusercontent.com/0JAdams/TwitterMovieTracker/gh-pages/images/sentiment-analysis-flow-chart.png" alt="Sentiment Analysis Flow Chart"></p>
 
-<p><img src="https://raw.githubusercontent.com/0JAdams/TwitterMovieTracker/gh-pages/images/preprocessanim7.gif" alt="Preprocess Tweet"></p>
+<h2>
+<a id="limitations" class="anchor" href="#limitations" aria-hidden="true"><span class="octicon octicon-link"></span></a>Limitations</h2>
+
+<h2>
+<a id="potential-future-work" class="anchor" href="#potential-future-work" aria-hidden="true"><span class="octicon octicon-link"></span></a>Potential Future Work</h2>
+
+<h2>
+<a id="libraries-used" class="anchor" href="#libraries-used" aria-hidden="true"><span class="octicon octicon-link"></span></a>Libraries Used</h2>
 
       <footer class="site-footer">
         <span class="site-footer-owner"><a href="https://github.com/0JAdams/TwitterMovieTracker">Twitter Movie Sentiment Tracker</a> is maintained by <a href="https://github.com/0JAdams">0JAdams</a>.</span>
