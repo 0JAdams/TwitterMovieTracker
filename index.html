@@ -58,19 +58,29 @@
 <p>This is demonstrated here:
 <img src="https://raw.githubusercontent.com/0JAdams/TwitterMovieTracker/gh-pages/images/preprocessanim7.gif" alt="Preprocess Tweet"></p>
 
-<p>Now that the tweet is ready, it is passed on to a series of machine learning classification algorithms that will each analyze and tell us whether it believes that tweet is speaking positively or negatively.  Due to the complexity of language, especially with words having multiple meanings, these classifiers are not perfectly accurate.  In order to improve our results, we use several of them, and each one votes on what it thinks the correct answer is.  We then take whichever answer is most popular as the correct answer. That result is then stored for later use.</p>
+<p>Now that the tweet is ready, it is passed on to a series of machine learning classification algorithms that will each analyze and tell us whether it believes that tweet is speaking positively or negatively. Due to the complexity of spoken languages, especially with words having multiple meanings, these classifiers are not perfectly accurate. In order to improve our results, we use several of them, and each one votes on what it thinks the correct answer is.  We then take whichever answer is most popular as the correct answer. That result is then stored for later use.</p>
 
 <p>A flow chart of this process can be seen here:
 <img src="https://raw.githubusercontent.com/0JAdams/TwitterMovieTracker/gh-pages/images/sentiment-analysis-flow-chart.png" alt="Sentiment Analysis Flow Chart"></p>
 
-<h2>
-<a id="limitations" class="anchor" href="#limitations" aria-hidden="true"><span class="octicon octicon-link"></span></a>Limitations</h2>
+<p>Gathering the other part of the data, the box office numbers, is much simpler. Thanks to sites like Box Office Mojo, the box office numbers are readily available.  All we need to do is point our program at a webpage for each movie and read the box office data and store it.</p>
 
 <h2>
-<a id="potential-future-work" class="anchor" href="#potential-future-work" aria-hidden="true"><span class="octicon octicon-link"></span></a>Potential Future Work</h2>
+<a id="how-are-predictions-made" class="anchor" href="#how-are-predictions-made" aria-hidden="true"><span class="octicon octicon-link"></span></a>How Are Predictions Made?</h2>
+
+<p>Because box office numbers tend to follow a weekly trend of being low at the beginning of the week and high on the weekends, we group all of our data into weeks to reduce the affect that has on our tests.  Then for each week we calculate key features. The features we currently gather are:  whether the total twitter engagement went up or down since last week, the percentage difference of engagement between the two weeks, the overall sentiment this week (positive, negative, or neutral), and how much did the sentiment change from last week to this week.</p>
+
+<p>Those features for each week are passed through a classifier called a decision tree. The decision tree was built on the features of past weeks that we had gathered.  The tree picks out patterns in the features and uses that to make a prediction.  In this case our prediction comes in the form of the percentage change we should see from this week's box office numbers to the next week's numbers.  Decision trees are limited on the number of results they can return, so in this case the percentage is a value rounded to the nearest 10%.</p>
+
+<p>Here is another look at the predictions shown above. This is for a movie that the tree has never seen before and most weeks it is within 0-10% of the correct change.  The data starts at week 5 because the movie had already been out for several weeks before we started gathering our Twitter data.</p>
+
+<p><img src="https://raw.githubusercontent.com/0JAdams/TwitterMovieTracker/gh-pages/images/The%20Martian_weeklyfigure9.png" alt="Martian box office predictions"></p>
 
 <h2>
-<a id="libraries-used" class="anchor" href="#libraries-used" aria-hidden="true"><span class="octicon octicon-link"></span></a>Libraries Used</h2>
+<a id="limitations-and-potential-future-work" class="anchor" href="#limitations-and-potential-future-work" aria-hidden="true"><span class="octicon octicon-link"></span></a>Limitations And Potential Future Work</h2>
+
+<h2>
+<a id="libraries-and-resources-used" class="anchor" href="#libraries-and-resources-used" aria-hidden="true"><span class="octicon octicon-link"></span></a>Libraries And Resources Used</h2>
 
       <footer class="site-footer">
         <span class="site-footer-owner"><a href="https://github.com/0JAdams/TwitterMovieTracker">Twitter Movie Sentiment Tracker</a> is maintained by <a href="https://github.com/0JAdams">0JAdams</a>.</span>
