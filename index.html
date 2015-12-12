@@ -29,13 +29,16 @@
 <p><img src="https://raw.githubusercontent.com/0JAdams/TwitterMovieTracker/gh-pages/images/animated_prediction5.gif" alt="Predict Future Week Box Office"></p>
 
 <h2>
-<a id="why-would-we-want-to-predict-this" class="anchor" href="#why-would-we-want-to-predict-this" aria-hidden="true"><span class="octicon octicon-link"></span></a>Why Would We Want To Predict This?</h2>
+<a id="why-would-we-want-to-predict-next-weeks-movie-performance" class="anchor" href="#why-would-we-want-to-predict-next-weeks-movie-performance" aria-hidden="true"><span class="octicon octicon-link"></span></a>Why Would We Want To Predict Next Week's Movie Performance?</h2>
 
-<p>Based on a list of movie keywords, relevant tweets are streamed from twitter.  Those tweets are preprocessed, and then analyzed. A group of classification algorithms rate the sentiment of the tweet and vote whether it has a positive sentiment or a negative sentiment.  This sentiment data is tracked over time and stored.</p>
+<p>When a studio releases a movie, they don't just put it out there and hope people happen to go see it.  They are actively engaged trying to convince the public to go show a movie through various forms of marketing.  By tracking twitter engagement and predicting how well a movie will fare over the coming week gives insight into how well people are being reached and how effective current marketing campaigns are.  This insight could help marketing teams to modify their campaigns to target a different demographic, reach people through a different form of media, etc.  Most importantly, trying to predict the future is a really cool use of computer science.</p>
 
-<p>Each movie's box office data is pulled from the web as daily earnings and stored as well.</p>
+<h2>
+<a id="exactly-what-information-is-tracked" class="anchor" href="#exactly-what-information-is-tracked" aria-hidden="true"><span class="octicon octicon-link"></span></a>Exactly What Information Is Tracked?</h2>
 
-<p>These two sets of data are then graphed and compared to evaluate correlation between them.</p>
+<p>Put most basically, there are just two items tracked, tweets about a given movie, and how well that movie has been doing in the box office.  There is a lot of information that we can gather from that data, though.  First off, we can how many people are talking about movie X in comparison to movie Y.  We can also see how frequently people are talking positively about a movie versus negatively about it and also compare that to other movies.  We refer to this as the sentiment.  The difference between how many tweets are positive and how many are negative tells us the majority sentiment, which we refer to as the net sentiment.</p>
+
+<p>Here are some visualizations of that twitter and box office data being tracked for some recent movies.</p>
 
 <p><img src="https://raw.githubusercontent.com/0JAdams/TwitterMovieTracker/gh-pages/images/Spectre_figure.png" alt="Spectre Movie Stats"></p>
 
