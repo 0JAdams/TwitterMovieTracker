@@ -1,5 +1,8 @@
-# Twitter Movie Sentiment Tracker
+# [Twitter Movie Sentiment Tracker](http://0jadams.github.io/TwitterMovieTracker/)
 ## Version 0.0.0.1
+
+**[Check website for more information](http://0jadams.github.io/TwitterMovieTracker/)**
+
 
 ### Files and Descriptions:
 * **documentBuilder.py** - This is the first step in training the sentiment classifiers. It uses preclassified tweets and does some of the initial preprocessing of them. 
